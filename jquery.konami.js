@@ -6,6 +6,10 @@
  * Dual licensed under the MIT and GPL licenses.
  *
  * http://docs.jquery.com/License
+ *
+ * for another great implementation checkout
+ *	http://plugins.jquery.com/project/konami-code
+ *
  */
 
 //- http://en.wikipedia.org/wiki/Konami_code
@@ -17,13 +21,10 @@
 				fn.callbacks = [];
 				var buffer = "";
 				var code = "38384040373937396665";
-				var hits = 0;
 				var konami = function(ev){
 
 					var key = ev.keyCode || ev.which;
 
-					hits++;
-					var msg = 1;
 					if(key){
 						buffer += (key+'');
 						if(buffer == code){
