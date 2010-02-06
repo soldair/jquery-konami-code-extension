@@ -1,0 +1,17 @@
+this is a quick konami code plugin that only supports binding a function at the window level to the konami event
+
+example:
+<script>
+$(function(){//when the document is ready
+	$.konami(function(){
+		alert('konami!');
+	});
+});
+</script>
+
+
+
+wikipedia:
+http://en.wikipedia.org/wiki/Konami_code
+
+this extension does not require enter after the code  to activate.
