@@ -27,7 +27,7 @@
 
 					if(key){
 						buffer += (key+'');
-						console.log(buffer);
+						//console.log(buffer);
 						if(buffer == code){
 							buffer = "";
 							$.each(callbacks,function(k,o){
@@ -62,7 +62,7 @@
 	$.fn.extend({
 		//refactor into event system.. removed event to stop leak?
 		konami:function(cb){
-			console.log(this);
+			//console.log(this);
 			this.each(function(){
 				$.konami(cb,this);
 			});
