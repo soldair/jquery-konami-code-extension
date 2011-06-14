@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery konami code testbed</title>
+	</head>
+	<body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src='./jquery.konami.js'></script>
+		<div id="konami1" data-toggle='konami3'>
+			konami1
+		</div>
+		<div class="konami">
+			konami2
+		</div>
+		<div class="konami">
+			konami2
+		</div>
+		<div id="konami3" data-toggle='konami1'>
+			konami3
+		</div>
+		<script>
+		$(function(){
+			var on = 1;
+			$(".konami").konami(function(){
+				var el = this;
+				$(el).html('KONAMI BITCHES!!!!!!');
+				setTimeout(function(){
+					$(el).html('konami2 redux');
+				},8000);
+			});
+
+			var toggleKonami = function fn(){
+				var el = this;
+				$(el).unkonami().html('WOOOAH TOGGLED');
+				$('#'+$(el).data('toggle')).konami(fn);
+
+				setTimeout(function(){
+					$(el).html($(el).data('toggle'));
+				},8000);
+			};
+
+			$("#konami1").konami(toggleKonami);
+		})
+		</script>
+	</body>
+</html>
